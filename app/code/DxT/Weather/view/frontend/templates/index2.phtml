@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <title></title>
+    <header>
+        <link rel="stylesheet" href="https://dnmtechs.com/project/checkip/css/bootstrap.min.css">
+    </header>
+
+    <body>
+        <div class="container">
+            <?php
+                $data = $block
+            ?>
+            <div class="row">
+                    <?php 
+                        foreach($data as $temp){ 
+                         {?>
+                <div class="col-md-2 text-center" style="border: 1px solid;">
+                             <div class="col-md-12" style="height:50px; width:50px; margin-left:auto;margin-right:auto;
+                             background: url('http://openweathermap.org/img/w/<?php echo $temp->weather[0]->icon ?>.png') no-repeat;"></div>
+                             <div class="col-md-12"><?php echo $temp->main->temp." &#8451;" ?></div>
+                             <div class="col-md-12"><?php echo $temp->main->humidity."%" ?></div>
+                             <div class="col-md-12"><?php echo $temp->weather[0]->main ?></div>
+                        </div>
+                            <?php } }
+                    ?> 
+                </div>
+
+        </div>
+    </body>
+</html>

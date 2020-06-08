@@ -1,0 +1,18 @@
+.container-weather {
+    background-color: #20567C;
+    color: white;
+    top: 253px;
+    left: 10px;
+    position: absolute;
+}
+.container-weather .title{
+    font-size: 2rem;
+}
+.row {
+    
+    border: none;
+    width: 300px;
+}
+.weather-info{
+    text-align: right;
+}
