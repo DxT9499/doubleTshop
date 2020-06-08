@@ -8,16 +8,19 @@
 }
 .container-weather .title{
     font-size: 2rem;
+    text-align: center;
 }
 
 .weather-now{
     background-color: rgb(68, 135, 184);
 }
 
+.container-weather .location-info{
+    text-align: center;
+}
+
 .row {
-    
-    border: none;
-    
+    border: none
 }
 .weather-info{
     text-align: right;

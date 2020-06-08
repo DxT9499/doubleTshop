@@ -20,34 +20,29 @@
                 $city_id = $current_obj->id;
                 $forcast_obj = $block->getForcast($city_id, $access_key);
             ?>
-            <div class="title">Weather
-            </div>
-            <div class="weather-now">
-                <div class="row">
-                    <div class="">Location: <?php echo $region.", ".$country ?></div>
-                    <div class="">Update Time: <?php echo date("d/m/Y H:i:s",$current_obj->dt); ?></div>
+            <div class="title">Thời tiết</div>
+            <div class="">
+                <div class="location-info">
+                    <div class="">Địa điểm: <?php echo $region.", ".$country ?></div>
+                    <div class="">Cập nhật lúc: <?php echo date("d/m/Y H:i:s",$current_obj->dt); ?></div>
                 </div>
-                <div class="row">
+                <div class="weather-now">
                     <div class="">
-                        <div style="height:50px; width:50px; margin-left:auto;margin-right:auto;
+                        <div style="height:60px; width:60px; margin-left:auto;margin-right:auto;
                              background: url('http://openweathermap.org/img/w/<?php echo $current_obj->weather[0]->icon ?>.png');background-size: cover;"></div>
                         <div><?php echo $current_obj->main->temp." &#8451;" ?> - <?php echo  $current_obj->weather[0]->main ?></div>
-                        <div>Cloudiness: <?php echo $current_obj->clouds->all."%" ?></div>
+                        <div>Mật độ mây: <?php echo $current_obj->clouds->all."%" ?></div>
                     </div>
                     <div class="weather-info">
-                        <div>Pressure: <?php echo $current_obj->main->pressure."hPa" ?></div>
-                        <div>Humidity: <?php echo $current_obj->main->humidity."%" ?></div>
-                        <div>Min Temp: <?php echo $current_obj->main->temp_min." &#8451;" ?></div>
-                        <div>Max Temp: <?php echo $current_obj->main->temp_max." &#8451;" ?></div>
+                        <div>Áp suất: <?php echo $current_obj->main->pressure."hPa" ?></div>
+                        <div>Độ ẩm: <?php echo $current_obj->main->humidity."%" ?></div>
+                        <div>Mức nhiệt thấp nhất: <?php echo $current_obj->main->temp_min." &#8451;" ?></div>
+                        <div>Mức nhiệt cao nhất: <?php echo $current_obj->main->temp_max." &#8451;" ?></div>
+                        <div>Tốc dộ gió: <?php echo $current_obj->wind->speed." meter/sec" ?></div>
+                        <div>Chiều gió: <?php echo $current_obj->wind->deg."&deg;" ?></div>
+                        <div>Mặt trời lặn: <?php echo date("H:i:s",$current_obj->sys->sunrise); ?></div>
+                        <div>Mặt trời mọc: <?php echo date("H:i:s",$current_obj->sys->sunset); ?></div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="weather-info">Wind Speed: <?php echo $current_obj->wind->speed." meter/sec" ?></div>
-                    <div class="weather-info">Wind Direction: <?php echo $current_obj->wind->deg."&deg;" ?></div>
-                </div>
-                <div class="row">
-                    <div class="weather-info">Sunrise: <?php echo date("H:i:s",$current_obj->sys->sunrise); ?></div>
-                    <div class="weather-info">Sunset: <?php echo date("H:i:s",$current_obj->sys->sunset); ?></div>
                 </div>
             </div>
             <div class="row">
@@ -57,10 +52,10 @@
                             if(date("d/m",$current_obj->dt) == date("d/m",$temp->dt)) {?>
                 <div class="">
                     <div class=""><b><?php echo date("d/m H:i",$temp->dt) ?></b></div>
-                    <div class="" style="height:50px; width:50px; margin-left:auto;margin-right:auto;
+                    <div class="" style="height:60px; width:60px; margin-left:auto;margin-right:auto;
                     background: url('http://openweathermap.org/img/w/<?php echo $temp->weather[0]->icon ?>.png') no-repeat;"></div>
-                    <div class="weather-info"><?php echo $temp->main->temp." &#8451;" ?></div>
-                    <div class="weather-info"><?php echo $temp->main->humidity."%" ?></div>
+                    <div class="weather-info">Nhiệt độ: <?php echo $temp->main->temp." &#8451;" ?></div>
+                    <div class="weather-info">Độ ẩm: <?php echo $temp->main->humidity."%" ?></div>
                     <div class="weather-info"><?php echo $temp->weather[0]->main ?></div>
                 </div>
                 <?php } 

@@ -4,22 +4,23 @@
         <link rel="stylesheet" type="text/css" href="<?php echo $block->getViewFileUrl('DxT_News::css/source/news.css') ?>">
     </header>
     <body>
-        <div class="box-news">
-            <?php
-                $data = $block->getNews();    
-            ?>
-            <?php
-                foreach($data->channel->item as $items) {
-            ?>
-                <div class="news">
-                    <a href="<?php echo $items->link ?>" target="_blank">
-                        <h3><?php echo $items->title ?></h3>
-                        <p><?php echo $items->description ?></p>
-                    </a>
-                </div>
-            <?php
-                } 
-            ?>
+        <div class="container-news">
+            <div class="title">Tin tức</div>
+            <div class="box-news">
+                <?php $data = $block->getNews(); ?>
+                <?php
+                    foreach($data->channel->item as $items) {
+                ?>
+                    <div class="news">
+                        <a href="<?php echo $items->link ?>" target="_blank">
+                            <h3><?php echo $items->title ?></h3>
+                            <p><?php echo $items->description ?></p>
+                        </a>
+                    </div>
+                <?php
+                    } 
+                ?>
+            </div>
         </div>
     <body>
 </html>
