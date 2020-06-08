@@ -238,6 +238,7 @@ return [
         'Boolfly_MomoWallet' => 1,
         'Dotdigitalgroup_Email' => 1,
         'Dotdigitalgroup_Chat' => 1,
+        'DxT_News' => 1,
         'DxT_Weather' => 1,
         'Hiddentechies_Base' => 1,
         'Hiddentechies_Pixtron' => 1,

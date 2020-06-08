@@ -1,0 +1,28 @@
+.box-news {
+    position: absolute;
+    right: 10px;
+    clear: both;
+    display: table-row;
+    top:253px;
+    max-width: 16%;
+    height: 650px;
+    overflow-y: auto
+}
+.box-news img {
+    float: left;
+    padding-right: 0px;
+    width: 50px;
+    height: 50px;
+}
+.box-news .news{
+    display:table-row;
+}
+div p {
+    color: black;
+    font-size:1rem;
+    word-wrap: break-word
+}
+div h3 {
+    font-size:1.5rem;
+    word-wrap: break-word
+}

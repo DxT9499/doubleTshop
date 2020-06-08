@@ -4,14 +4,20 @@
     top: 253px;
     left: 10px;
     position: absolute;
+    width: 15%
 }
 .container-weather .title{
     font-size: 2rem;
 }
+
+.weather-now{
+    background-color: rgb(68, 135, 184);
+}
+
 .row {
     
     border: none;
-    width: 300px;
+    
 }
 .weather-info{
     text-align: right;
