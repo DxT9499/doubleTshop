@@ -18,7 +18,7 @@
 @product-name-link__text-decoration__visited: @link__hover__text-decoration;
 
 @product-item__hover__background-color: @color-white;
-@product-item__hover__box-shadow: 3px 4px 4px 0 rgba(0, 0, 0, .3);
+@product-item__hover__box-shadow: none;
 
 @product-price__muted__color: @color-gray40;
 
@@ -288,7 +288,7 @@
             &.active {
                 .lib-css(background, @product-item__hover__background-color);
                 .lib-css(box-shadow, @product-item__hover__box-shadow);
-                border: 1px solid @color-gray-light2;
+                border: none;
                 margin: -10px;
                 padding: 9px;
                 position: relative;
@@ -311,7 +311,7 @@
         .products-grid & {
             .lib-css(background, @product-item__hover__background-color);
             .lib-css(box-shadow, @product-item__hover__box-shadow);
-            border: 1px solid @color-gray-light2;
+            border: none;
             border-top: none;
             left: 0;
             margin: 10px 0 0 -1px;
@@ -410,7 +410,7 @@
     .page-layout-1column .block.widget .products-grid .product-item,
     .page-layout-3columns .block.widget .products-grid .product-item {
         .product-item-inner {
-            box-shadow: 3px 6px 4px 0 rgba(0, 0, 0, .3);
+            box-shadow:none;
             margin: 9px 0 0 -1px;
         }
     }
