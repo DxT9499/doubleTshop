@@ -11,13 +11,13 @@ class Index extends \Magento\Framework\View\Element\Template
 	{
         $url = "https://24h.com.vn/upload/rss/thoitrang.rss";
 
-        $arrContextOptions=array(
-            "ssl"=>array(
-                "verify_peer"=>false,
-                "verify_peer_name"=>false,
-            ),
-        );
-        $content = file_get_contents($url, false, stream_context_create($arrContextOptions));
+        // $arrContextOptions=array(
+        //     "ssl"=>array(
+        //         "verify_peer"=>false,
+        //         "verify_peer_name"=>false,
+        //     ),
+        // );
+        $content = file_get_contents($url);
         $xml = simplexml_load_string($content);
 
         return $xml;

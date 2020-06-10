@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <header>
+        <link rel="stylesheet" type="text/css" href="<?php echo $block->getViewFileUrl('DxT_ExchangeRate::css/source/exchangerate.css') ?>">
+    </header>
+    <body>
+        <div class="container-exchange-rate">
+            <div class="title">Thông tin tỷ giá</div>
+            <table class="fixed_header">
+                <thead>
+                    <tr>
+                        <th>Mã ngoại tệ</th>
+                        <th>Tên ngoại tệ</th>
+                        <th>Tỷ giá mua tiền mặt</th>
+                        <th>Tỷ giá mua chuyển Khoản</th>
+                        <th>Tỷ giá bán</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php $data = $block->getExchangeRate() ?>
+                    <?php
+                        foreach($data->Exrate as $item){
+                    ?>
+                        <tr>
+                            <td><?php echo $item['CurrencyCode'] ?></td>
+                            <td><?php echo $item['CurrencyName'] ?></td>
+                            <td><?php echo $item['Buy'] ?></td>
+                            <td><?php echo $item['Transfer'] ?></td>
+                            <td><?php echo $item['Sell'] ?></td>
+                        </tr>
+                    <?php } ?>
+                </tbody>
+            </table>
+        </div>
+    <body>
+</html>

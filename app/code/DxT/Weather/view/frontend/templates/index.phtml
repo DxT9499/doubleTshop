@@ -23,43 +23,37 @@
             <div class="title">Thời tiết</div>
             <div class="">
                 <div class="location-info">
-                    <div class="">Địa điểm: <?php echo $region.", ".$country ?></div>
-                    <div class="">Cập nhật lúc: <?php echo date("d/m/Y H:i:s",$current_obj->dt); ?></div>
+                    <div>Địa điểm: <?php echo $region.", ".$country ?></div>
+                    <div>Cập nhật lúc: <?php echo date("d/m/Y H:i:s",$current_obj->dt); ?></div>
                 </div>
                 <div class="weather-now">
-                    <div class="">
-                        <div style="height:60px; width:60px; margin-left:auto;margin-right:auto;
-                             background: url('http://openweathermap.org/img/w/<?php echo $current_obj->weather[0]->icon ?>.png');background-size: cover;"></div>
+                    <div class="weather-info">
+                        <div style="height:60px; width:60px; margin-left:auto;margin-right:auto;background: url('http://openweathermap.org/img/w/<?php echo $current_obj->weather[0]->icon ?>.png');background-size: cover;"></div>
                         <div><?php echo $current_obj->main->temp." &#8451;" ?> - <?php echo  $current_obj->weather[0]->main ?></div>
                         <div>Mật độ mây: <?php echo $current_obj->clouds->all."%" ?></div>
-                    </div>
-                    <div class="weather-info">
                         <div>Áp suất: <?php echo $current_obj->main->pressure."hPa" ?></div>
                         <div>Độ ẩm: <?php echo $current_obj->main->humidity."%" ?></div>
                         <div>Mức nhiệt thấp nhất: <?php echo $current_obj->main->temp_min." &#8451;" ?></div>
                         <div>Mức nhiệt cao nhất: <?php echo $current_obj->main->temp_max." &#8451;" ?></div>
                         <div>Tốc dộ gió: <?php echo $current_obj->wind->speed." meter/sec" ?></div>
-                        <div>Chiều gió: <?php echo $current_obj->wind->deg."&deg;" ?></div>
-                        <div>Mặt trời lặn: <?php echo date("H:i:s",$current_obj->sys->sunrise); ?></div>
-                        <div>Mặt trời mọc: <?php echo date("H:i:s",$current_obj->sys->sunset); ?></div>
+                        <div>Mặt trời mọc: <?php echo date("H:i:s",$current_obj->sys->sunrise); ?></div>
+                        <div>Mặt trời lặn: <?php echo date("H:i:s",$current_obj->sys->sunset); ?></div>
                     </div>
                 </div>
             </div>
-            <div class="row">
+            <div>
                     <?php 
                         $forcast_list = $forcast_obj->list;
                         foreach($forcast_list as $temp)
                             if(date("d/m",$current_obj->dt) == date("d/m",$temp->dt)) {?>
-                <div class="">
-                    <div class=""><b><?php echo date("d/m H:i",$temp->dt) ?></b></div>
-                    <div class="" style="height:60px; width:60px; margin-left:auto;margin-right:auto;
-                    background: url('http://openweathermap.org/img/w/<?php echo $temp->weather[0]->icon ?>.png') no-repeat;"></div>
-                    <div class="weather-info">Nhiệt độ: <?php echo $temp->main->temp." &#8451;" ?></div>
-                    <div class="weather-info">Độ ẩm: <?php echo $temp->main->humidity."%" ?></div>
-                    <div class="weather-info"><?php echo $temp->weather[0]->main ?></div>
-                </div>
-                <?php } 
-                    ?>
+                        <div class="weather-info">
+                            <div><b><?php echo date("d/m H:i",$temp->dt) ?></b></div>
+                            <div style="height:60px; width:60px; margin-left:auto;margin-right:auto; background: url('http://openweathermap.org/img/w/<?php echo $temp->weather[0]->icon ?>.png') no-repeat;"></div>
+                            <div>Nhiệt độ: <?php echo $temp->main->temp." &#8451;" ?></div>
+                            <div>Độ ẩm: <?php echo $temp->main->humidity."%" ?></div>
+                            <div><?php echo $temp->weather[0]->main ?></div>
+                        </div>
+                    <?php } ?>
             </div>
         </div>
     </body>

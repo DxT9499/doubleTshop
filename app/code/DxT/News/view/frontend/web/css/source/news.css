@@ -34,3 +34,20 @@ div h3 {
     font-size:1.5rem;
     word-wrap: break-word
 }
+div
+    ::-webkit-scrollbar {
+        width: 10px;
+    }
+        
+    ::-webkit-scrollbar-track {
+        background: #f1f1f1; 
+    }
+    
+
+    ::-webkit-scrollbar-thumb {
+        background: #888; 
+    }
+    
+    ::-webkit-scrollbar-thumb:hover {
+        background: #555; 
+    }

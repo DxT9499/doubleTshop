@@ -4,7 +4,8 @@
     top: 253px;
     left: 10px;
     position: absolute;
-    width: 15%
+    text-align: center;
+    width: 16%
 }
 .container-weather .title{
     font-size: 2rem;
@@ -15,13 +16,10 @@
     background-color: rgb(68, 135, 184);
 }
 
-.container-weather .location-info{
-    text-align: center;
-}
-
-.row {
-    border: none
-}
 .weather-info{
-    text-align: right;
+    border-top: 2px solid white;
+    position: relative;
+    margin-right: auto;
+    margin-left: auto;
+
 }
