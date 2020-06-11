@@ -6,6 +6,9 @@
 }
 
 .container-exchange-rate .title{
+    background-color: #333333;
+    color: white;
+    border-bottom: white;
     font-size: 2rem ;
     text-align: center;
 }

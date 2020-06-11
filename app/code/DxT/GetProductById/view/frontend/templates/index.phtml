@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <header>
+    </header>
+    <body>
+        <div class="product_info">
+            <p>aaaa</p>
+            <?php
+                $id = 287;
+                $sku = 'DTAP002';
+                $_product = $block->getProductById($id);
+                $_product = $block->getProductBySku($sku);
+                ?>
+                <p><?php echo $_product->getEntityId(); ?></p>
+                <p><?php echo '<br />'; ?></p>
+                <p><?php echo $_product->getName(); ?></p>
+                <div><?php echo $_product->getThumbnail(); ?></div>
+                <div><?php echo $_product->getPrice(); ?></div>
+                <div><?php echo $_product->getQuantity(); ?></div>
+                
+            
+        </div>
+    <body>
+</html>

@@ -239,6 +239,7 @@ return [
         'Dotdigitalgroup_Email' => 1,
         'Dotdigitalgroup_Chat' => 1,
         'DxT_ExchangeRate' => 1,
+        'DxT_GetProductById' => 1,
         'DxT_News' => 1,
         'DxT_Weather' => 1,
         'Klarna_Core' => 1,
