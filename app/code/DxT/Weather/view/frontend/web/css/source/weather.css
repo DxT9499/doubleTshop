@@ -13,23 +13,22 @@
 }
 .container-weather div{
     background-color: black;
-    opacity: 0.8;
+    opacity: 0.75;
 }
 .container-weather .weather-info{
-    width: 30%;
-    
+    width: 25%;
 }
 .container-weather .weather-info .title{
     font-size: 2rem;
-    
+    padding-left: 5%;
 }
-.container-weather .weather-details{
+.container-weather .weather-info .location-info{
+    padding-left: 5%;
+}
+.container-weather .weather-details div{
+    padding-left: 5%;
     text-align: left;
 }
-
-.weather-info{
-    position: relative;
-    margin-right: auto;
-    margin-left: auto;
-
+.container-weather .weather-now div{
+    padding-left: 5%;
 }

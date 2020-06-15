@@ -21,7 +21,7 @@
     display:block;
     width: 100%;
     overflow: auto;
-    height: 100px;
+    height: 200px;
 }
 
 .fixed_header thead tr {

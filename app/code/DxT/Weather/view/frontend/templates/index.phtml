@@ -29,13 +29,8 @@
                         <div>Cập nhật: <?php echo date("d/m/Y H:i:s",$current_obj->dt); ?></div>
                     </div>
                 </td>
-                <td class="weather-now">
-                    <div><?php echo  $current_obj->weather[0]->main ?></div>
-                    <div><?php echo $current_obj->main->temp." &#8451;" ?></div>
-                    <div>Mức nhiệt thấp nhất: <?php echo $current_obj->main->temp_min." &#8451;" ?></div>
-                    <div>Mức nhiệt cao nhất: <?php echo $current_obj->main->temp_max." &#8451;" ?></div>
-                </td>
-                <td class="weather-details">
+                <td style="width: 50%;"></td>
+                <td class="weather-details" rowspan="2"  style="vertical-align:top">
                     <div>Mật độ mây: <?php echo $current_obj->clouds->all."%" ?></div>
                     <div>Áp suất: <?php echo $current_obj->main->pressure."hPa" ?></div>
                     <div>Độ ẩm: <?php echo $current_obj->main->humidity."%" ?></div>
@@ -43,6 +38,15 @@
                     <div>Mặt trời mọc: <?php echo date("H:i:s",$current_obj->sys->sunrise); ?></div>
                     <div>Mặt trời lặn: <?php echo date("H:i:s",$current_obj->sys->sunset); ?></div>
                 </td>
+            </tr>
+            <tr>
+                <td class="weather-now">
+                        <div><?php echo  $current_obj->weather[0]->main ?></div>
+                        <div><?php echo $current_obj->main->temp." &#8451;" ?></div>
+                        <div>Mức nhiệt thấp nhất: <?php echo $current_obj->main->temp_min." &#8451;" ?></div>
+                        <div>Mức nhiệt cao nhất: <?php echo $current_obj->main->temp_max." &#8451;" ?></div>
+                </td>
+                <td style="width: 50%;"></td>
             </tr>
         </table>
     </body>
