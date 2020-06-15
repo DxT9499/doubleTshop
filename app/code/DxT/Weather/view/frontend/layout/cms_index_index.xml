@@ -1,10 +1,10 @@
 <?xml version="1.0"?>
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
-        <referenceContainer name="page.wrapper">
+        <referenceContainer name="top.container">
             <block class="DxT\Weather\Block\Index"
                     name="weather.view"
-                    before="main.content"
+                    after="banner.view"
                     template="DxT_Weather::index.phtml"
             />
         </referenceContainer>

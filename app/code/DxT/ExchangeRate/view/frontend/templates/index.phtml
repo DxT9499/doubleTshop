@@ -5,7 +5,8 @@
     </header>
     <body>
         <div class="container-exchange-rate">
-            <div class="title">Thông tin tỷ giá</div>
+            <?php $data = $block->getExchangeRate() ?>
+            <div class="title">Thông tin tỷ giá (<?php echo $data->DateTime ?>)</div>
             <table class="fixed_header">
                 <thead>
                     <tr>
@@ -17,7 +18,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <?php $data = $block->getExchangeRate() ?>
+                    
                     <?php
                         foreach($data->Exrate as $item){
                     ?>

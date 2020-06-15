@@ -1,19 +1,20 @@
 .container-news{
     position: absolute;
-    right: 10px;
     clear: both;
-    top:253px;
-    max-width: 16%;
-    height: 650px;
+    width: 50%;
+    left: 50%;
+    right:0;
 }
 .container-news .title{
+    width: 100%;
     font-size: 2rem;
     color: #77B43D;
     text-align: center;
     border-bottom: 2px solid #77B43D;
 }
 .container-news .box-news {
-    max-height: 630px;
+    width: 100%;
+    max-height: 200px;
     overflow-y: auto;
 }
 .container-news .box-news img {

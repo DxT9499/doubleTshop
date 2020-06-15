@@ -1,23 +1,33 @@
 .container-weather {
-    background-color: #20567C;
+    width: 100%;
+    height: 200px;
     color: white;
-    top: 253px;
-    left: 10px;
-    position: absolute;
-    text-align: center;
-    width: 16%
+    font-size: medium;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    margin-bottom: 5px;
 }
-.container-weather .title{
+.container-weather tr td{
+    vertical-align: middle;
+}
+.container-weather div{
+    background-color: black;
+    opacity: 0.8;
+}
+.container-weather .weather-info{
+    width: 30%;
+    
+}
+.container-weather .weather-info .title{
     font-size: 2rem;
-    text-align: center;
+    
 }
-
-.weather-now{
-    background-color: rgb(68, 135, 184);
+.container-weather .weather-details{
+    text-align: left;
 }
 
 .weather-info{
-    border-top: 2px solid white;
     position: relative;
     margin-right: auto;
     margin-left: auto;

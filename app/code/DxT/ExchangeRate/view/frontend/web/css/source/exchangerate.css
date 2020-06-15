@@ -1,8 +1,6 @@
 .container-exchange-rate{
-    width: 100%;
+    width: 50%;
     position: relative;
-    margin-left: auto;
-    margin-right: auto;
 }
 
 .container-exchange-rate .title{

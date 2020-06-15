@@ -1,10 +1,11 @@
 <?xml version="1.0"?>
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
-        <referenceContainer name="page.wrapper">
+        <referenceContainer name="top.container">
             <block class="Sparsh\Banner\Block\Banner"
                    name="banner.view"
-                   before="main.content"
+                   before="exchangerate.view"
+                   after="weather.view"
                    template="Sparsh_Banner::banner.phtml"
                    ifconfig="sparsh_banner/general/enable"
             />

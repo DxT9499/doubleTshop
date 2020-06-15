@@ -2,59 +2,48 @@
 <html>
     <title></title>
     <header>
-        <!-- <link rel="stylesheet" href="https://dnmtechs.com/project/checkip/css/bootstrap.min.css"> -->
         <link rel="stylesheet" type="text/css" href="<?php echo $block->getViewFileUrl('DxT_Weather::css/source/weather.css') ?>">
     </header>
 
     <body>
-        <div class="container-weather">
-            <?php
-                $access_key = "&appid=2094f2f05473cadc889af07c7c186dde";
-                $ip_obj = $block->sendJsontoServer();
-                $country = $ip_obj->country_name;
-                $region = $ip_obj->region_name;
-                if(!$region){
-                    $region = $ip_obj->location->capital;
-                }
-                $current_obj = $block->getCurrentData($region, $country, $access_key);
-                $city_id = $current_obj->id;
-                $forcast_obj = $block->getForcast($city_id, $access_key);
-            ?>
-            <div class="title">Thời tiết</div>
-            <div class="">
-                <div class="location-info">
-                    <div>Địa điểm: <?php echo $region.", ".$country ?></div>
-                    <div>Cập nhật lúc: <?php echo date("d/m/Y H:i:s",$current_obj->dt); ?></div>
-                </div>
-                <div class="weather-now">
-                    <div class="weather-info">
-                        <div style="height:60px; width:60px; margin-left:auto;margin-right:auto;background: url('http://openweathermap.org/img/w/<?php echo $current_obj->weather[0]->icon ?>.png');background-size: cover;"></div>
-                        <div><?php echo $current_obj->main->temp." &#8451;" ?> - <?php echo  $current_obj->weather[0]->main ?></div>
-                        <div>Mật độ mây: <?php echo $current_obj->clouds->all."%" ?></div>
-                        <div>Áp suất: <?php echo $current_obj->main->pressure."hPa" ?></div>
-                        <div>Độ ẩm: <?php echo $current_obj->main->humidity."%" ?></div>
-                        <div>Mức nhiệt thấp nhất: <?php echo $current_obj->main->temp_min." &#8451;" ?></div>
-                        <div>Mức nhiệt cao nhất: <?php echo $current_obj->main->temp_max." &#8451;" ?></div>
-                        <div>Tốc dộ gió: <?php echo $current_obj->wind->speed." meter/sec" ?></div>
-                        <div>Mặt trời mọc: <?php echo date("H:i:s",$current_obj->sys->sunrise); ?></div>
-                        <div>Mặt trời lặn: <?php echo date("H:i:s",$current_obj->sys->sunset); ?></div>
+        <?php
+            $access_key = "&appid=2094f2f05473cadc889af07c7c186dde";
+            $ip_obj = $block->sendJsontoServer();
+            $country = $ip_obj->country_name;
+            $region = $ip_obj->region_name;
+            if(!$region){
+                $region = $ip_obj->location->capital;
+            }
+            $current_obj = $block->getCurrentData($region, $country, $access_key);
+            $city_id = $current_obj->id;
+            $forcast_obj = $block->getForcast($city_id, $access_key);
+            $weather = $current_obj->weather[0]->icon;
+            $background_path = "DxT_Weather::images/" . $weather . ".jpg";
+        ?>
+        <table class="container-weather" style="background-image: url('<?php echo $this->getViewFileUrl($background_path) ?>');" >
+            <tr>
+                <td class="weather-info">
+                    <div class="title">Thời tiết</div>
+                    <div class="location-info">
+                        <div>Địa điểm: <?php echo $region.", ".$country ?></div>
+                        <div>Cập nhật: <?php echo date("d/m/Y H:i:s",$current_obj->dt); ?></div>
                     </div>
-                </div>
-            </div>
-            <div>
-                    <?php 
-                        $forcast_list = $forcast_obj->list;
-                        foreach($forcast_list as $temp)
-                            if(date("d/m",$current_obj->dt) == date("d/m",$temp->dt)) {?>
-                        <div class="weather-info">
-                            <div><b><?php echo date("d/m H:i",$temp->dt) ?></b></div>
-                            <div style="height:60px; width:60px; margin-left:auto;margin-right:auto; background: url('http://openweathermap.org/img/w/<?php echo $temp->weather[0]->icon ?>.png') no-repeat;"></div>
-                            <div>Nhiệt độ: <?php echo $temp->main->temp." &#8451;" ?></div>
-                            <div>Độ ẩm: <?php echo $temp->main->humidity."%" ?></div>
-                            <div><?php echo $temp->weather[0]->main ?></div>
-                        </div>
-                    <?php } ?>
-            </div>
-        </div>
+                </td>
+                <td class="weather-now">
+                    <div><?php echo  $current_obj->weather[0]->main ?></div>
+                    <div><?php echo $current_obj->main->temp." &#8451;" ?></div>
+                    <div>Mức nhiệt thấp nhất: <?php echo $current_obj->main->temp_min." &#8451;" ?></div>
+                    <div>Mức nhiệt cao nhất: <?php echo $current_obj->main->temp_max." &#8451;" ?></div>
+                </td>
+                <td class="weather-details">
+                    <div>Mật độ mây: <?php echo $current_obj->clouds->all."%" ?></div>
+                    <div>Áp suất: <?php echo $current_obj->main->pressure."hPa" ?></div>
+                    <div>Độ ẩm: <?php echo $current_obj->main->humidity."%" ?></div>
+                    <div>Tốc dộ gió: <?php echo $current_obj->wind->speed." meter/sec" ?></div>
+                    <div>Mặt trời mọc: <?php echo date("H:i:s",$current_obj->sys->sunrise); ?></div>
+                    <div>Mặt trời lặn: <?php echo date("H:i:s",$current_obj->sys->sunset); ?></div>
+                </td>
+            </tr>
+        </table>
     </body>
 </html>
